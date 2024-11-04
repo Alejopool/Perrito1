@@ -3,30 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}"> <!--Este es el archivo de stilos nuestro de nosotros-->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"><!--Este es el archivo importada desde bootstrap -->
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script><!-- este es el archivo js extraido de bootstrap-->
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <title>Conteo de vocales</title>
 </head>
 <body>
     <div style="margin-top: 8px; margin-right: 10px;">
-        <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-primary">Volver</button></a>
+        <a href="{{ url_for('llevar_inicio') }}"><button class="btn btn-primary">Volver</button></a>
+    </div> 
+    <div  class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: red;">Contar Cantidad de Vocales de los Textos</h2>
     </div> 
     <div class="col-md-12 d-flex align-items-center justify-content-center" style="margin-top: 100px;">
-        <form class="row g-3">
+        <form method="POST" action="" class="row g-3">
             <div class="col-auto">
                 <label for="Cadena1" class="visually-hidden">Cadena 1</label>
-                <input type="text" readonly class="form-control" id="Cadena1" value="Ingrese Texto">
+                <input type="text" class="form-control" id="Cadena1" name="Cadena1" placeholder="Ingrese Texto">
             </div>
             <div class="col-auto">
                 <label for="Cadena2" class="visually-hidden">Cadena 2</label>
-                <input type="text" class="form-control" id="Cadena2" value="Ingrese Texto">
+                <input type="text" class="form-control" id="Cadena2" name="Cadena2" placeholder="Ingrese Texto">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Contar vocales</button>
             </div>
-        </form>
+        </form>      
     </div>
+
+    {% if mensaje_error %}
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: red;font-size: 50px; text-shadow: 2px 2px 0px #000000">{{ mensaje_error }}</h2>
+    </div>
+    {% endif %}
+
+    {% if resultados %}
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: green;">Resultados:</h2>
+    </div>
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <h3>Cadena 1:</h3>
+    </div>
+    {% for vocal, count in resultados['Cadena1'].items() %}
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <p>Vocal {{ vocal }}: {{ count }}</p>
+    </div>
+        
+    {% endfor %}
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <h3 >Cadena 2:</h3>
+    </div>
+    
+    {% for vocal, count in resultados['Cadena2'].items() %}
+
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <p>Vocal {{ vocal }}: {{ count }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
 </body>
 </html>
