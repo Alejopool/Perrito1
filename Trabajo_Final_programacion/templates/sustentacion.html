@@ -3,14 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/DocSutentacion.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"><!--Este es el archivo importada desde bootstrap -->
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script><!-- este es el archivo js extraido de bootstrap-->
-    <title>Home</title>
+    <title>Sustentacion</title>
 </head> 
 <body>
-    <div style="margin-top: 8px; margin-right: 10px;">
-        <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-primary">Volver</button></a>
-    </div>    
+    <header>
+        <div class="text-start">
+            <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-secondary">Volver</button></a>
+        </div>
+        <h1>Documento de Sustentación</h1>
+    </header>
+
+    <div class="container">
+        <section class="section" id="introduccion">
+            <h2>Introducción</h2>
+            <p>
+                Este documento tiene como propósito exponer la justificación y sustentación de la elección de la herramienta de software que se implementará en el área de gestión de proyectos de nuestra empresa. La elección de la herramienta está basada en un análisis exhaustivo de diversas opciones y se seleccionó la que mejor se adapta a nuestras necesidades actuales y futuras.
+            </p>
+        </section>
+
+        <section class="section" id="analisis">
+            <h2>Análisis Comparativo</h2>
+            <p>
+                En esta sección, se presenta el análisis comparativo de las herramientas evaluadas para la gestión de proyectos. A continuación, se exponen los factores considerados en el proceso de selección:
+            </p>
+            <ol>
+                <li><strong>Facilidad de uso:</strong> Evaluamos la interfaz de usuario y la facilidad para adaptarse a la herramienta.</li>
+                <li><strong>Funcionalidades:</strong> Se consideraron las funcionalidades específicas como gestión de tareas, seguimiento de tiempo y colaboración en equipo.</li>
+                <li><strong>Precio:</strong> Se analizó el costo total de propiedad, incluyendo licencias y mantenimiento.</li>
+                <li><strong>Soporte:</strong> Se evaluó el soporte al cliente y la disponibilidad de recursos de capacitación.</li>
+            </ol>
+        </section>
+
+        <section class="section" id="conclusion">
+            <h2>Conclusión</h2>
+            <p>
+                Tras realizar un análisis detallado de las opciones disponibles, hemos determinado que la herramienta "ProjectMaster" es la mejor opción para nuestras necesidades. Esta herramienta ofrece una interfaz intuitiva, tiene un conjunto de funcionalidades completo y su costo es competitivo. Además, el soporte al cliente de "ProjectMaster" ha sido calificado como excelente por otros usuarios.
+            </p>
+            <div class="quote">
+                "La selección de una herramienta adecuada para la gestión de proyectos no solo optimiza los procesos, sino que también facilita la colaboración entre los miembros del equipo." - Equipo de TI
+            </div>
+        </section>
+
+        <section class="section" id="referencias">
+            <h2>Referencias</h2>
+            <p>Las fuentes utilizadas para la elaboración de este documento incluyen:</p>
+            <ul>
+                <li>Estudio comparativo de herramientas de gestión de proyectos - TechAnalysis, 2023.</li>
+                <li>Reporte de usuarios de ProjectMaster - ProjectMaster Inc., 2023.</li>
+                <li>Guía de herramientas de software para empresas medianas - Software Solutions, 2022.</li>
+            </ul>
+        </section>
+    </div>   
 </body>
 </html>

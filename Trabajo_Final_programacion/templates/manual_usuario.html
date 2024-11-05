@@ -3,14 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"><!--Este es el archivo importada desde bootstrap -->
-    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script><!-- este es el archivo js extraido de bootstrap-->
-    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ManualUsuario.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <title>Manual de Usuario</title>
 </head> 
 <body>
-    <div style="margin-top: 8px; margin-right: 10px;">
-        <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-primary">Volver</button></a>
-    </div> 
+
+
+    <header id="BarraNavegacion">
+        <div class="text-start">
+            <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-secondary">Volver</button></a>
+        </div>
+        <h1>Manual de Usuario</h1>
+        <nav>
+            <a class=" fs-4 text-light " style="margin-right: 30px;" href="#ConteoVocales">Conteo de Vocales</a>
+            <a class=" fs-4 text-light " style="margin-right: 30px;" href="#BuscarSubCadena">Buscar Sub Cadena</a>
+            <a class=" fs-4 text-light " style="margin-right: 30px;" href="#palindromas">Palabras Palindromas</a>
+            <a class=" fs-4 text-light " href="#TituloMayusculas">Mayusculas Iniciales</a>
+        </nav>
+    </header>
+
+    <div class="container"> <!--Este es la maqueta del modulo CONTEO DE VOCALES-->
+        <div class="text-center text-danger text-decoration-underline" id="ConteoVocales">
+              <h1>Conteo de Vocales</h1>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h2>Ingresar al Aplicativo</h2>
+                <p>Contar con la URL del proyecto, seguido de esto ingresar a esta en el navegador de preferencia.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+1:+Descargar+el+Instalador" alt="">
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h2>Ingreso al Modulo</h2>
+                <p>Hubicar el boton del modulo de Conteo de vocales, seguido de haberlo hubicado pulsar clic en el boton.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+2:+Ejecutar+el+Instalador" alt="Ejecutar el instalador">
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h2>Modulo Conteo Vocales</h2>
+                <p>Alli se encontraran 2 campos en los que se puede digitar texto, llenar estos 2 campos con el texto que desee, seguido pulsar clic en el boton de "Contar Vocales".</p>
+                <span><span class="fw-bold">Observacion:</span><br>
+                Tener en cuenta que esta funcionalidad lo que te va a mostrar es el conteo de las vocales que encuentre en ambos textos si la cantidad de caracteres es igual.</span>
+                
+
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+3:+Seleccionar+Idioma" alt="Seleccionar idioma">
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h2>Resultado</h2>
+                <p>Luego de pulsar clic en el boton de "Contar Vocales" se debe de ver en pantalla la informacion de la cantidad de vocales que tiene cada texto.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+4:+Configurar+la+Instalación" alt="Configurar la instalación">
+            </div>
+        </div>
+    </div>
+
+    <div class="container"> <!--Esta es la maqueta del modulo de SUB-CADENA -->
+        <div class="text-center text-danger text-decoration-underline" id="BuscarSubCadena">
+              <h1>Buscar Sub-Cadena</h1>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h2>Ingresar al Aplicativo</h2>
+                <p>Contar con la URL del proyecto, seguido de esto ingresar a esta en el navegador de preferencia.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+1:+Descargar+el+Instalador" alt="">
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h2>Ingreso al Modulo</h2>
+                <p>Hubicar el boton del modulo de buscar sub cadena, seguido de haberlo hubicado pulsar clic en el boton.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+2:+Ejecutar+el+Instalador" alt="Ejecutar el instalador">
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h2>Modulo Sub Cadena</h2>
+                <p>Alli se encontraran 2 campos en los que se puede digitar texto, llenar estos 2 campos con el texto que desee, seguido pulsar clic en el boton de "Buscar SubCadena".</p>
+                <span><span class="fw-bold">Observacion:</span><br>
+                Tener en cuenta que esta funcionalidad lo que te va a mostrar es si en una cadena de texto existe una combinacion de texto igual a la primera.</span>
+                
+
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+3:+Seleccionar+Idioma" alt="Seleccionar idioma">
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h2>Resultado</h2>
+                <p>Luego de pulsar clic en el boton de "Buscar SubCadena" se debe de ver en pantalla la informacion que indica si hay texto igual en alguna de las 2 cadenas de texto.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+4:+Configurar+la+Instalación" alt="Configurar la instalación">
+            </div>
+        </div>
+    </div>
+
+    <div class="container"> <!--Esta es la maqueta del modulo de Palindromas -->
+        <div class="text-center text-danger text-decoration-underline" id="palindromas">
+              <h1>Buscar Palindromas</h1>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h2>Ingresar al Aplicativo</h2>
+                <p>Contar con la URL del proyecto, seguido de esto ingresar a esta en el navegador de preferencia.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+1:+Descargar+el+Instalador" alt="">
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h2>Ingreso al Modulo</h2>
+                <p>Hubicar el boton del modulo de buscar palabras palindromas, seguido de haberlo hubicado pulsar clic en el boton.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+2:+Ejecutar+el+Instalador" alt="Ejecutar el instalador">
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h2>Modulo Palindromas</h2>
+                <p>Alli se encontraran 1 campo en el que se puede digitar texto, llenar este campo con el texto que desee, seguido pulsar clic en el boton de "Buscar Palabras Palindromas".</p>
+                <span><span class="fw-bold">Observacion:</span><br>
+                Tener en cuenta que esta funcionalidad lo que te va a mostrar es si en el texto digitado existen palabras palindromas.</span><br>
+                <span><span class="fw-bold">¿Que es una palabra Palindroma?</span><br>
+                <span>Una palabra palíndroma es una palabra o frase que se lee igual de izquierda a derecha que de derecha a izquierda</span>
+                
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+3:+Seleccionar+Idioma" alt="Seleccionar idioma">
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h2>Resultado</h2>
+                <p>Luego de pulsar clic en el boton de "Buscar Palabras Palindromas" se debe de ver en pantalla la informacion que indica cuantos caracteres hay en el texto digitado <br>
+                adicionalmente mostrar las palabras palindromas enlistadas que se encontraron en el texto</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+4:+Configurar+la+Instalación" alt="Configurar la instalación">
+            </div>
+        </div>
+    </div>
+
+    <div class="container"> <!--Esta es la maqueta del modulo de Mayusculas Iniciales -->
+        <div class="text-center text-danger text-decoration-underline" id="TituloMayusculas">
+              <h1>Inicial MAYUSCULA</h1>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h2>Ingresar al Aplicativo</h2>
+                <p>Contar con la URL del proyecto, seguido de esto ingresar a esta en el navegador de preferencia.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+1:+Descargar+el+Instalador" alt="">
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h2>Ingreso al Modulo</h2>
+                <p>Hubicar el boton del modulo de buscar palabras Inicial MAYUSCULAS, seguido de haberlo hubicado pulsar clic en el boton.</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+2:+Ejecutar+el+Instalador" alt="Ejecutar el instalador">
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h2>Modulo Inicial MAYUSCULA</h2>
+                <p>Alli se encontraran 1 campo en el que se puede digitar texto, llenar este campo con el texto que desee, seguido pulsar clic en el boton de "Convertir".</p>
+                <span><span class="fw-bold">Observacion:</span><br>
+                Tener en cuenta que esta funcionalidad lo que te va a mostrar es el texto ingresado pero con la mayuscula incial en cada palabra.</span>
+                
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+3:+Seleccionar+Idioma" alt="Seleccionar idioma">
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h2>Resultado</h2>
+                <p>Luego de pulsar clic en el boton de "Convertir" se debe de ver en pantalla el resultado del mismo texto digitado pero con las primeras letras de cada palabra en mayuscula</p>
+                <img src="https://via.placeholder.com/900x500/007bff/ffffff?text=Paso+4:+Configurar+la+Instalación" alt="Configurar la instalación">
+            </div>
+        </div>
+    </div>
 </body>
 </html>

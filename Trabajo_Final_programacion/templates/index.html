@@ -10,69 +10,60 @@
 </head> 
 <body>
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col-xl-12">
             <div class="row">
 
                 <div class="col-xl-6 bg-3">
                     aca va la imagen
                     <img src="" alt="">
                 </div>
-            </div>
-            <div class="row">
-
-                <div class="col-xl-6 bg-3">
-                    aca va la imagen
-                    <img src="" alt="">
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-xl-6 bg-3">
-                    aca va la imagen
-                    <img src="" alt="">
-                </div>
-            </div>
-            <div class="row">
-
-                <div class="col-xl-6 bg-3">
-                    aca va la imagen
-                    <img src="" alt="">
-                </div>
-            </div>
-        </div>
-        
-        <div class="col-xl-6">
-            <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-6">
                     <span>Funcion que me compara dos cadeneas, si son iguales contar vocales y decir cuales, 
                     si son diferentes aparece en pantalla las cadenas no son iguales <a href="{{url_for('ingreso_conteo_vocales')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
+                    <br>
+                    <hr>
                 </div>
             </div>
-            <br>
-            <hr style="border: 2px solid #343d44;">
             <div class="row">
-                <div class="col-xl-12">
-                    <span>Funcion que recibe dos cadenas y dice si es o no es subcadena de la otra <a href="{{url_for('ingreso_Sub_cadena')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
-                </div>
-            </div>
-            <br>
-            <hr style="border: 2px solid #343d44;">
-            <div class="row">
-                <div class="col-xl-12">
-                    <span>Funcion que recibe un texto y el programa devolvera las palabras palindromas <a href="{{url_for('ingreso_Palindromas')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
-                </div>
-            </div>
-            <br>
-            <hr style="border: 2px solid #343d44;">
-            <div class="row">
-                <div class="col-xl-12">
-                    <span>Funcion que recibe un texto y se colocara la primera letra en mayusculas <a href="{{url_for('ingreso_Titulo_mayuscula')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
-                </div>
-            </div>
-            <hr style="border: 2px solid #343d44;">
 
+                <div class="col-xl-6 bg-3">
+                    aca va la imagen
+                    <img src="" alt="">
+                </div>
+                <div class="col-xl-6">
+                    <span>Funcion que recibe dos cadenas y dice si es o no es subcadena de la otra <a href="{{url_for('ingreso_Sub_cadena')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xl-6 bg-3">
+                    aca va la imagen
+                    <img src="" alt="">
+                </div>
+                <div class="col-xl-6">
+                    <span>Funcion que recibe un texto y el programa devolvera las palabras palindromas <a href="{{url_for('ingreso_Palindromas')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
+                    <br>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xl-6 bg-3">
+                    aca va la imagen
+                    <img src="" alt="">
+                </div>
+                <div class="col-xl-6">
+                    <span>Funcion que recibe un texto y se colocara la primera letra en mayusculas <a href="{{url_for('ingreso_Titulo_mayuscula')}}"> <button class="btn btn-primary">Presione Click</button> </a></span>
+                    <br>
+                    <hr>
+                </div>
+            </div>
         </div>
     </div>
+    <br>
+    <br>
     <form action="/seleccionar" method="POST">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -86,9 +77,5 @@
             </select>
         </div>
     </form>
-    <!-- {% if resultado is not none %} 
-        <h1>resultado:{{resultado}}</h1>
-    {% endif %} -->
-
 </body>
 </html>

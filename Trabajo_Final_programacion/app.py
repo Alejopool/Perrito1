@@ -77,8 +77,8 @@ def FuncionPalindroma(Parrafo):
 #FUNCION Titulos en Mayuscula ----------------
 def titulo(cadena):
     if cadena.isdigit():
-        print("lo que acaba de digitar son numeros")
-        quit()
+        return "lo que acaba de digitar son numeros"
+        #quit()
     else:
         Palabras = cadena.split()
         resultado = ""
@@ -153,8 +153,6 @@ def seleccionar():
         return render_template('manual_usuario.html')
     else:
         return render_template('index.html')
-
-
 
 if __name__ == '__main__':
     app.run(debug=True)
