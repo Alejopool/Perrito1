@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 #--------------------------ESPACIO  PARA LAS FUNCIONES DEL PROYECTO--------------------------------
+#FUNCION CONTAR VOCALES ------------------
 def contar_cadenas(cadena1, cadena2):
     resultados = {}
 
@@ -30,6 +31,23 @@ def contar_vocales(cadena):
             contador[char] += 1
 
     return {vocal: contador[vocal] for vocal in vocales if contador[vocal] > 0}
+#---------------------------------------------
+#FUNCION SUB CADENA --------------------------
+class CadenaVerificadora:
+    def verificar_subcadena(self, cadena1, cadena2):
+        
+        if len(cadena1) >= len(cadena2):
+            largo = cadena1
+            corto = cadena2
+        else:
+            largo = cadena2
+            corto = cadena1
+        
+        if corto in largo:
+            return f"{corto} ES SUBCADENA DE {largo}"
+        else:
+            return f"{corto} NO ES SUBCADENA DE {largo}"
+#---------------------------------------------
 #--------------------------------------------------------------------------------------------------
 
 @app.route('/')  # Inicializa el servidor en la raíz del proyecto
@@ -49,9 +67,16 @@ def ingreso_conteo_vocales():
 
     return render_template('Conteo_vocales.html', resultados=resultados, mensaje_error=mensaje_error)
 
-@app.route('/Sub_cadena')  # Enviar a ruta de subcadenas
+@app.route('/Sub_cadena', methods=['GET', 'POST'])  # Enviar a ruta de subcadenas
 def ingreso_Sub_cadena(): 
-    return render_template('Sub_cadena.html')
+    verificador = CadenaVerificadora()
+    Resultado = None
+    if request.method == 'POST':
+        Texto1 = request.form.get('Texto1')
+        Texto2 = request.form.get('Texto2')
+        Resultado = verificador.verificar_subcadena(Texto1,Texto2)
+
+    return render_template('Sub_cadena.html',Resultado = Resultado)
 
 @app.route('/Palindromas')  # Enviar a ruta de palíndromas
 def ingreso_Palindromas(): 
