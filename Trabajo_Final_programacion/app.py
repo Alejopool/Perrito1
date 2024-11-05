@@ -73,7 +73,27 @@ def FuncionPalindroma(Parrafo):
         resultado += "No se encontraron palabras palindromas.<br>"
 
     return resultado
+#---------------------------------------------
+#FUNCION Titulos en Mayuscula ----------------
+def titulo(cadena):
+    if cadena.isdigit():
+        print("lo que acaba de digitar son numeros")
+        quit()
+    else:
+        Palabras = cadena.split()
+        resultado = ""
+        i = 0
 
+        while i < len(Palabras):
+            PalabrasConPrimeraLetraMayuscula = Palabras[i].capitalize()
+
+            if resultado:  
+                resultado += " "
+            
+            resultado += PalabrasConPrimeraLetraMayuscula
+            i += 1
+        
+        return resultado
 #---------------------------------------------
 #--------------------------------------------------------------------------------------------------
 
@@ -115,9 +135,14 @@ def ingreso_Palindromas():
 
     return render_template('Palindromas.html', Resultado = Resultado)
 
-@app.route('/Titulo_mayuscula')  # Enviar a ruta de título mayúscula
+@app.route('/Titulo_mayuscula', methods=['GET', 'POST'])  # Enviar a ruta de título mayúscula
 def ingreso_Titulo_mayuscula(): 
-    return render_template('Titulo_mayuscula.html')
+    Resultado = None
+    if request.method == 'POST':
+        Titulo = request.form.get('Titulo')
+        Resultado = titulo(Titulo)
+
+    return render_template('Titulo_mayuscula.html', Resultado = Resultado)
 
 @app.route('/seleccionar', methods=['POST'])  # Enviar a ruta de selección
 def seleccionar(): 

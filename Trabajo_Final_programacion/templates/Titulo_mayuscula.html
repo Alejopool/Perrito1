@@ -12,16 +12,24 @@
     <div style="margin-top: 8px; margin-right: 10px;">
         <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-primary">Volver</button></a>
     </div> 
+    <div  class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: red;">Primera Letra en MAYUSCULA</h2>
+    </div> 
     <div class="col-md-12 d-flex align-items-center justify-content-center" style="margin-top: 100px;">
-        <form class="row g-3">
+        <form class="row g-3" method="POST">
             <div class="col-auto">
-                <label for="Cadena1" class="visually-hidden">Cadena 1</label>
-                <input type="text" readonly class="form-control" id="Cadena1" value="Ingrese Texto">
+                <label for="Titulo" class="visually-hidden">Cadena 1</label>
+                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ingrese Texto">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Convertir</button>
             </div>
         </form>
-    </div> 
+    </div>
+    {% if Resultado %}
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: red;font-size: 30px">{{ Resultado }}</h2>
+    </div>
+    {% endif %} 
 </body>
 </html>
