@@ -12,16 +12,24 @@
     <div style="margin-top: 8px; margin-right: 10px;">
         <a href="{{url_for('llevar_inicio')}}"><button class="btn btn-primary">Volver</button></a>
     </div>  
+    <div  class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: red;">Buscar Palabras palindromas</h2>
+    </div> 
     <div class="col-md-12 d-flex align-items-center justify-content-center" style="margin-top: 100px;">
-        <form class="row g-3">
+        <form method="POST" class="row g-3">
             <div class="col-auto">
                 <label for="palindromas" class="visually-hidden">Cadena 1</label>
-                <input type="text" readonly class="form-control" id="palindromas" value="Ingrese Texto">
+                <input type="text" class="form-control" id="palindromas" name="palindromas" placeholder="Ingrese Texto">
             </div>
             <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3">Buscar palabras palindorma</button>
             </div>
         </form>
     </div> 
+    {% if Resultado %}
+    <div class="col-md-12 d-flex align-items-center justify-content-center">
+        <h2 style="color: black;font-size: 30px;">{{ Resultado|safe }}</h2>
+    </div>
+    {% endif %}
 </body>
 </html>

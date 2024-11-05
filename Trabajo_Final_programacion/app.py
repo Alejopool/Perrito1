@@ -48,6 +48,33 @@ class CadenaVerificadora:
         else:
             return f"{corto} NO ES SUBCADENA DE {largo}"
 #---------------------------------------------
+#FUNCION BUSCAR PALINDROMAS ------------------
+def FuncionPalindroma(Parrafo):
+    CantidadESpacios = Parrafo.count(' ')
+    Palabra = Parrafo.split()
+    
+    Palindroma = []
+    Cobtador = 0
+    while Cobtador < len(Palabra):
+        if Palabra[Cobtador].lower() == Palabra[Cobtador][::-1].lower():
+            Palindroma.append(Palabra[Cobtador])
+        Cobtador += 1
+        
+    CantPalabraspalindromas = len(Palindroma)
+
+    resultado = f"Numero de espacios en el parrafo: {CantidadESpacios}<br>"
+    resultado += f"Hay {CantPalabraspalindromas} palabras palindromas en el texto digitado.<br>"
+    
+    if Palindroma:
+        resultado += "Palabras palindromas encontradas:<br>"
+        for palabra in Palindroma:
+            resultado += f"{palabra}<br>"
+    else:
+        resultado += "No se encontraron palabras palindromas.<br>"
+
+    return resultado
+
+#---------------------------------------------
 #--------------------------------------------------------------------------------------------------
 
 @app.route('/')  # Inicializa el servidor en la raíz del proyecto
@@ -78,9 +105,15 @@ def ingreso_Sub_cadena():
 
     return render_template('Sub_cadena.html',Resultado = Resultado)
 
-@app.route('/Palindromas')  # Enviar a ruta de palíndromas
+@app.route('/Palindromas', methods=['GET', 'POST'])  # Enviar a ruta de palíndromas
 def ingreso_Palindromas(): 
-    return render_template('Palindromas.html')
+    Resultado = None
+
+    if request.method == 'POST':
+        palindromas = request.form.get('palindromas')
+        Resultado = FuncionPalindroma(palindromas)
+
+    return render_template('Palindromas.html', Resultado = Resultado)
 
 @app.route('/Titulo_mayuscula')  # Enviar a ruta de título mayúscula
 def ingreso_Titulo_mayuscula(): 
